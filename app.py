@@ -74,7 +74,7 @@ class CSV:
          print("\nSummary:")
          print(f"Total Income: ${total_income:.2f}\nTotal Expenses: ${total_expense:.2f}\nNet Savings: ${(total_income - total_expense):.2f}")
       
-      filtered_df.sort_values(by=["date"],ascending = False)
+      filtered_df = filtered_df.sort_values(by=["date"], ascending=True)
       return filtered_df
 
 
@@ -86,6 +86,24 @@ def add():
    category = get_category()
    description = get_description()
    CSV.add_entry(date,amount,category,description)
+
+
+def plot_transactions(df):
+   df.set_index("date",inplace=True)
+   
+   #create two separate data frames for income/expense with daily frequency
+   income_df = df[df["category"] == "Income"].resample("D").sum().reindex(df.index,fill_value=0)
+   expense_df = df[df["category"] == "Expense"].resample("D").sum().reindex(df.index,fill_value=0)
+
+   plt.figure(figsize=(10,5))
+   plt.plot(income_df.index, income_df["amount"], label = "Income", color = "b" )
+   plt.plot(expense_df.index, expense_df["amount"], label="Expense", color = "r")
+   plt.xlabel("Date")
+   plt.ylabel("Amount")
+   plt.title("Income and Expenses over time")
+   plt.legend()
+   plt.grid(True)
+   plt.show()
 
 
 def main():
@@ -103,6 +121,8 @@ def main():
 
          #pass dates to file
          df = CSV.get_transactions(start_date,end_date)
+         if not df.empty:
+            plot_transactions(df)
       elif choice == "3":
          print("Exiting...")
          break
@@ -114,4 +134,3 @@ if __name__ == "__main__":
 #if we run this file directly then main will run
 #otherwise if it is imported eg it won't run
    main()         
-            
