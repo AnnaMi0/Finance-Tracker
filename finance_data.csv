@@ -1,0 +1,14 @@
+date,amount,category,description
+03-01-2020,100.50,Income,Salary
+15-02-2021,50.00,Expense,Groceries
+20-03-2019,25.00,Expense,Transport
+28-04-2022,200.00,Income,Freelance
+05-05-2023,100.00,Expense,Utilities
+10-06-2018,75.00,Expense,Restaurant
+15-07-2021,300.00,Income,Bonus
+18-08-2020,150.00,Expense,Clothing
+25-09-2019,50.00,Expense,Entertainment
+01-10-2022,120.00,Income,Gift
+07-11-2021,80.00,Expense,Gas
+14-12-2023,60.00,Expense,Healthcare
+20-01-2024,400.00,Income,Investment
