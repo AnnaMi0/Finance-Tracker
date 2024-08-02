@@ -29,6 +29,7 @@ class CSV:
             writer = csv.DictWriter(csvfile, fieldnames=cls.COLUMNS)
             writer.writerow(new_entry)
     
+    
     @classmethod
     def get_transactions(cls, start_date, end_date):
         df = pd.read_csv(cls.CSV_FILE)
@@ -38,13 +39,6 @@ class CSV:
         end_date = datetime.strptime(end_date, CSV.FORMAT)
         mask = (df["date"] >= start_date) & (df["date"] <= end_date)
         filtered_df = df.loc[mask]
-        if filtered_df.empty:
-            print("No transactions found in given date range")
-        else:
-            total_income = filtered_df[filtered_df["category"] == "Income"]["amount"].sum()
-            total_expense = filtered_df[filtered_df["category"] == "Expense"]["amount"].sum()
-            print("\nSummary:")
-            print(f"Total Income: ${total_income:.2f}\nTotal Expenses: ${total_expense:.2f}\nNet Savings: ${(total_income - total_expense):.2f}")
         filtered_df = filtered_df.sort_values(by=["date"], ascending=True)
         return filtered_df
 
