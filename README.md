@@ -1,6 +1,5 @@
 # Finance Tracker
 
-
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Overview
@@ -18,7 +17,7 @@ The Finance Tracker is a Python application that allows users to manage and visu
    
    
 
-### Installation / How to Run
+## Installation / How to Run
 
 <ol>
 <li>Create a virtual environment (optional but recommended):</li>
