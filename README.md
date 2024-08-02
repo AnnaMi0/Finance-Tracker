@@ -9,7 +9,7 @@ The Finance Tracker is a Python application that allows users to manage and visu
 
 ## Requirements
 
-1. **Python 3.x**: Ensure Python 3.x is installed on your system.
+1. **Python 3.x**: Ensure Python 3.x is installed on your system (tested on 3.10.2).
    
 2. **Required Libraries**: You will need the following Python libraries:
    - `pandas`: For handling CSV files and data manipulation.

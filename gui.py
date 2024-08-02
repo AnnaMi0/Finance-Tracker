@@ -58,7 +58,6 @@ def update_latest_transactions():
 
 root = tk.Tk()
 root.title('Finance Tracker')
-root.iconbitmap("icon.ico")
 root.geometry("700x900")
 root.configure(bg='#D3D3D3')  # Light gray background
 
@@ -91,7 +90,7 @@ notebook.pack(expand=True, fill="both", padx=10, pady=10)
 add_frame = ttk.Frame(notebook, padding="20", style="TFrame")
 notebook.add(add_frame, text="Add Transaction")
 
-ttk.Label(add_frame, text="Date (dd-mm-yyyy)").grid(row=0, column=0, pady=10, sticky="e", padx=30)
+ttk.Label(add_frame, text="Date").grid(row=0, column=0, pady=10, sticky="e", padx=30)
 date_entry = DateEntry(add_frame, date_pattern="dd-mm-yyyy", width=27, background='darkgray', foreground='white', borderwidth=2)
 date_entry.grid(row=0, column=1, pady=10, sticky="w")
 
@@ -114,11 +113,11 @@ ttk.Button(add_frame, text="Add", command=add_transaction).grid(row=4, columnspa
 view_frame = ttk.Frame(notebook, padding="20")
 notebook.add(view_frame, text="View Transactions")
 
-ttk.Label(view_frame, text="Start Date (dd-mm-yyyy)").grid(row=0, column=0, pady=10, sticky="e", padx=30)
+ttk.Label(view_frame, text="Start Date").grid(row=0, column=0, pady=10, sticky="e", padx=30)
 start_date_entry = DateEntry(view_frame, date_pattern="dd-mm-yyyy", width=27, background='darkgray', foreground='white', borderwidth=2)
 start_date_entry.grid(row=0, column=1, pady=10, sticky="w")
 
-ttk.Label(view_frame, text="End Date (dd-mm-yyyy)").grid(row=1, column=0, pady=10, sticky="e", padx=30)
+ttk.Label(view_frame, text="End Date").grid(row=1, column=0, pady=10, sticky="e", padx=30)
 end_date_entry = DateEntry(view_frame, date_pattern="dd-mm-yyyy", width=27, background='darkgray', foreground='white', borderwidth=2)
 end_date_entry.grid(row=1, column=1, pady=10, sticky="w")
 
